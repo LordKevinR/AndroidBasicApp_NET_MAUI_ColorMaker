@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Color_Maker.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Grid x:Name="Container" BackgroundColor="Black">
+
+        <Frame
+            Margin="10,0"
+            BackgroundColor="#cbd5e1"
+            VerticalOptions="Center">
+            <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center">
+                    Color Maker
+                </Label>
+
+                <Label>Red Value:</Label>
+                <Slider
+                    x:Name="sldRed"
+                    MaximumTrackColor="#991b1b"
+                    MinimumTrackColor="#b91c1c"
+                    ThumbColor="#dc2626"
+                    ValueChanged="sld_ValueChanged" />
+
+                <Label>Green Value:</Label>
+                <Slider
+                    x:Name="sldGreen"
+                    MaximumTrackColor="#3f6212"
+                    MinimumTrackColor="#65a30d"
+                    ThumbColor="#84cc16"
+                    ValueChanged="sld_ValueChanged" />
+
+                <Label>Blue Value:</Label>
+                <Slider
+                    x:Name="sldBlue"
+                    MaximumTrackColor="#1e3a8a"
+                    MinimumTrackColor="#1d4ed8"
+                    ThumbColor="#2563eb"
+                    ValueChanged="sld_ValueChanged" />
+
+                <Border
+                    Padding="15"
+                    BackgroundColor="#cbd5e1"
+                    HorizontalOptions="Center"
+                    StrokeThickness="2">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="40,0,0,40" />
+                    </Border.StrokeShape>
+                    <Border.Stroke>
+                        <SolidColorBrush Color="#000" />
+                    </Border.Stroke>
+                    <HorizontalStackLayout>
+                        <Label
+                            x:Name="lblHex"
+                            HorizontalTextAlignment="End"
+                            Text="#000000"
+                            VerticalOptions="Center" />
+
+                        <ImageButton
+                            Margin="10,0,0,0"
+                            BackgroundColor="#cbd5e1"
+                            Clicked="ImageButton_Clicked"
+                            HeightRequest="25"
+                            Source="copy.svg"
+                            VerticalOptions="Center"
+                            WidthRequest="25" />
+                    </HorizontalStackLayout>
+                </Border>
+
+                <Button
+                    x:Name="btnRandom"
+                    BackgroundColor="#0369a1"
+                    Clicked="btnRandom_Clicked"
+                    FontAttributes="Bold"
+                    FontSize="Small"
+                    Text="Generate Random Color" />
+
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+
+</ContentPage>
